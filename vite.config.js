@@ -9,7 +9,7 @@ import Components from 'unplugin-vue-components/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/allisonditmore.github.io/',
+  base: '/allisonditmore/',
   plugins: [VueRouter(), vue(), vueDevTools(), tailwindcss(), Components()],
   resolve: {
     alias: {
