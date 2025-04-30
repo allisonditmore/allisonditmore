@@ -13,5 +13,11 @@ const { text } = toRefs(props)
 
 <template>
   <span>- {{ text }}</span>
-  <IconCurvyArrow class="w-12 h-10" />
+  <IconCurvyArrow class="w-12 h-10 tilt" />
 </template>
+
+<style scoped>
+.tilt {
+  transform: rotate(-110deg);
+}
+</style>

@@ -8,7 +8,6 @@
     clip-rule="evenodd"
     viewBox="0 0 20 53.813"
     fill="currentColor"
-    transform="rotate(-110)"
     width="20"
     height="53.813"
   >

@@ -31,22 +31,6 @@ const formattedTabs = computed(() => {
     })
   }
 
-  if (role.value.techStack) {
-    tabList.push({
-      title: language.value === 'American English' ? 'Tech tools' : 'Outils techniques',
-      content: role.value.techStack,
-      displayComponent: 'BulletList',
-    })
-  }
-
-  if (role.value.skills) {
-    tabList.push({
-      title: language.value === 'American English' ? 'Soft skills' : 'Compétences douces',
-      content: role.value.skills,
-      displayComponent: 'BulletList',
-    })
-  }
-
   if (role.value.additionalContributions) {
     tabList.push({
       title: language.value === 'American English' ? 'More' : 'Plus',
@@ -64,7 +48,7 @@ const formattedTabs = computed(() => {
     <div class="flex flex-col gap-4">
       <div v-for="(roleItem, index) in role.positions" :key="index">
         <h3 class="text-lg md:text-xl font-bold">{{ roleItem.title }}</h3>
-        <p class="text-sm font-bold">{{ roleItem.date }} &bull; {{ role.company }}</p>
+        <p v-if="roleItem.date || roleItem.company" class="text-sm font-bold">{{ roleItem.date }}<span v-if="roleItem.date && role.company"> &bull; </span>{{ role.company }}</p>
       </div>
     </div>
     <AccordionTabs v-if="formattedTabs.length" :tabs="formattedTabs" class="mt-4" />
